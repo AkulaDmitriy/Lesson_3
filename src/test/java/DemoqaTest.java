@@ -40,7 +40,7 @@ public class DemoqaTest {
 
         $("#hobbies-checkbox-1").sendKeys(" ");
 
-        $("#uploadPicture").uploadFile(new File("src/test/data/smile.jpg"));
+        $("#uploadPicture").uploadFile(new File("src/test/resources/Img.png"));
 
         $("#currentAddress").setValue("Current Address");
 

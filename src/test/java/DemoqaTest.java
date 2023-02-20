@@ -23,6 +23,8 @@ public class DemoqaTest {
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
+        
+        
         $("#firstName").setValue("Dima");
         $("#lastName").setValue("Akula");
 
@@ -34,7 +36,7 @@ public class DemoqaTest {
 
         $("#dateOfBirthInput").setValue("03 Aug 1985").pressEnter();
 
-        $("#subjectsInput").setValue("Math").pressEnter();// где взять этот локатор
+        $("#subjectsInput").setValue("Math").pressEnter();
 
         $("#hobbies-checkbox-1").sendKeys(" ");
 

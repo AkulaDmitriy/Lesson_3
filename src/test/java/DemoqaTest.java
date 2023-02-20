@@ -26,6 +26,7 @@ public class DemoqaTest {
         
         
         $("#firstName").setValue("Dima");
+
         $("#lastName").setValue("Akula");
 
         $("#userEmail").setValue("Dima_Akula@gmail.com");
@@ -52,6 +53,12 @@ public class DemoqaTest {
         $("#submit").click();
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $(".modal-body").shouldHave(
+                text("Dima"),
+                text("Akula"),
+                text("Dima_Akula@gmail.com")
+        );
+
 
 
     }

@@ -23,7 +23,7 @@ public class RegistrationPage {
             addressInput = $("#currentAddress"),
             state = $("#state"),
             choseState = $("#react-select-3-option-0"),
-            cityinput = $("#city"),
+            cityInput = $("#city"),
             choseCity = $("#react-select-4-option-0"),
             submitForm = $("#submit"),
             submitMsg = $("#example-modal-sizes-title-lg"),
@@ -32,6 +32,11 @@ public class RegistrationPage {
     public RegistrationPage openPage() {
 
         open("/automation-practice-form");
+        return this;
+    }
+
+    public RegistrationPage removeBanner() {
+
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
         return this;
@@ -102,7 +107,7 @@ public class RegistrationPage {
 
     }
 
-    public RegistrationPage setstate() {
+    public RegistrationPage setState() {
 
         state.click();
         return this;
@@ -116,7 +121,7 @@ public class RegistrationPage {
 
     public RegistrationPage setCity() {
 
-        cityinput.click();
+        cityInput.click();
         return this;
     }
 
@@ -143,7 +148,8 @@ public class RegistrationPage {
         registrationResultModal.verifyModalAppears();
         return this;
     }
-    public RegistrationPage verifyResult (String key, String value) {
+
+    public RegistrationPage verifyResult(String key, String value) {
 
         registrationResultModal.verifyResult(key, value);
 

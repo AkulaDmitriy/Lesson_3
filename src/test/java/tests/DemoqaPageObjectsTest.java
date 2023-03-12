@@ -18,6 +18,7 @@ public class DemoqaPageObjectsTest extends TestBase {
                 submitMessage = "Thanks for submitting the form";
 
         registrationPage.openPage()
+                .removeBanner()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(email)
@@ -28,15 +29,19 @@ public class DemoqaPageObjectsTest extends TestBase {
                 .setHobbies()
                 .uploadFile(filePath)
                 .setAddress(address)
-                .setstate()
+                .setState()
                 .setChoseState()
                 .setCity()
                 .choseCity()
                 .submitForm()
                 .checkSubmitMsg(submitMessage)
                 .verifyResultModalAppears()
-                .verifyResult ("Student Name", firstName+ " " + lastName)
-                .verifyResult("Student Email", email);
+                .verifyResult("Student Name", firstName + " " + lastName)
+                .verifyResult("Student Email", email)
+                .verifyResult("Mobile", phoneNumber)
+                .verifyResult("Date of Birth", dateOfBirth)
+                .verifyResult("Subjects", subject)
+                .verifyResult("Address", address);
 
     }
 }

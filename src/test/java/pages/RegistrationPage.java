@@ -68,6 +68,7 @@ public class RegistrationPage {
 
     public RegistrationPage setPhoneNumber(String value) {
 
+        phoneNumberInput.clear();
         phoneNumberInput.setValue(value);
         return this;
     }

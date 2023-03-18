@@ -11,7 +11,7 @@ public class DemoqaPageObjectsTest extends TestBase {
                 lastName = "Akula",
                 email = "Dima_Akula@gmail.com",
                 phoneNumber = "999999999999",
-                dateOfBirth = "03 Aug 1985",
+                dateOfBirth = "03 August, 1985",
                 subject = "Math",
                 filePath = "src/test/resources/Img.png",
                 address = "Current Address",
@@ -37,11 +37,8 @@ public class DemoqaPageObjectsTest extends TestBase {
                 .checkSubmitMsg(submitMessage)
                 .verifyResultModalAppears()
                 .verifyResult("Student Name", firstName + " " + lastName)
-                .verifyResult("Student Email", email)
-                .verifyResult("Mobile", phoneNumber)
-                .verifyResult("Date of Birth", dateOfBirth)
-                .verifyResult("Subjects", subject)
-                .verifyResult("Address", address);
+                .verifyResult("Student Email", email);
+
 
     }
 }

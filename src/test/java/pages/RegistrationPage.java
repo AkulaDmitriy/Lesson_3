@@ -75,7 +75,7 @@ public class RegistrationPage {
 
     public RegistrationPage setDateOfBirth(String value) {
 
-        dateOfBirthInput.setValue("03 Aug 1985").pressEnter();
+        dateOfBirthInput.setValue(value).pressEnter();
         return this;
 
     }

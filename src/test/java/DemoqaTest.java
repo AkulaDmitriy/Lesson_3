@@ -18,13 +18,12 @@ public class DemoqaTest {
     }
 
     @Test
-    void studentRegistrationFormTest ()
-    {
+    void studentRegistrationFormTest() {
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
-        
-        
+
+
         $("#firstName").setValue("Dima");
 
         $("#lastName").setValue("Akula");
@@ -58,7 +57,6 @@ public class DemoqaTest {
                 text("Akula"),
                 text("Dima_Akula@gmail.com")
         );
-
 
 
     }

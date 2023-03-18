@@ -2,20 +2,14 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 
+import static tests.TestData.*;
+
 public class DemoqaPageObjectsTest extends TestBase {
 
 
     @Test
     void studentRegistrationFormTest() {
-        String firstName = "Dima",
-                lastName = "Akula",
-                email = "Dima_Akula@gmail.com",
-                phoneNumber = "999999999999",
-                dateOfBirth = "03 August, 1985",
-                subject = "Math",
-                filePath = "src/test/resources/Img.png",
-                address = "Current Address",
-                submitMessage = "Thanks for submitting the form";
+
 
         registrationPage.openPage()
                 .removeBanner()

@@ -1,11 +1,11 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.components.CalendarComponent;
 import pages.components.RegistrationResultModal;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
@@ -14,17 +14,16 @@ public class RegistrationPage {
     private SelenideElement lastNameInput = $("#lastName"),
             firstNameInput = $("#firstName"),
             emailInput = $("#userEmail"),
-            genderValue = $("#gender-radio-1"),
+            genderValue = $("#genterWrapper"),
             phoneNumberInput = $("#userNumber"),
             dateOfBirthInput = $("#dateOfBirthInput"),
             subjectInput = $("#subjectsInput"),
-            hobbiesInput = $("#hobbies-checkbox-1"),
+            hobbiesInput = $("#hobbiesWrapper"),
             fileUpload = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
-            state = $("#state"),
-            choseState = $("#react-select-3-option-0"),
-            cityInput = $("#city"),
-            choseCity = $("#react-select-4-option-0"),
+            state = $("#react-select-3-input"),
+
+            choseCity = $("#react-select-4-input"),
             submitForm = $("#submit"),
             submitMsg = $("#example-modal-sizes-title-lg"),
             resultForm = $(".modal-body");
@@ -60,9 +59,9 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setGender() {
+    public RegistrationPage setGender(String value) {
 
-        genderValue.sendKeys(" ");
+        genderValue.$(byText(value)).click();
         return this;
     }
 
@@ -73,11 +72,11 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setDateOfBirth(String value) {
+    public RegistrationPage setDateOfBirth(String day, String month,String year) {
 
-        dateOfBirthInput.setValue(value).pressEnter();
+        dateOfBirthInput.click();
+        CalendarComponent.setDate(day,month,year);
         return this;
-
     }
 
     public RegistrationPage setSubject(String value) {
@@ -87,16 +86,16 @@ public class RegistrationPage {
 
     }
 
-    public RegistrationPage setHobbies() {
+    public RegistrationPage setHobbies(String value) {
 
-        hobbiesInput.sendKeys(" ");
+        hobbiesInput.$(byText(value)).click();
         return this;
 
     }
 
     public RegistrationPage uploadFile(String value) {
 
-        fileUpload.uploadFile(new File(value));
+        fileUpload.uploadFromClasspath(value);
         return this;
 
     }
@@ -108,27 +107,15 @@ public class RegistrationPage {
 
     }
 
-    public RegistrationPage setState() {
+    public RegistrationPage setState(String value) {
 
-        state.click();
+        state.setValue(value).pressEnter();
         return this;
     }
 
-    public RegistrationPage setChoseState() {
+    public RegistrationPage setCity(String value) {
 
-        choseState.click();
-        return this;
-    }
-
-    public RegistrationPage setCity() {
-
-        cityInput.click();
-        return this;
-    }
-
-    public RegistrationPage choseCity() {
-
-        choseCity.click();
+        choseCity.setValue(value).pressEnter();
         return this;
     }
 
